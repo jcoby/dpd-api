@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the DPD API package.
+ * (c) 2010 Portal Labs, LLC <contact@portallabs.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 // this example lists all of your websites and the products within those websites
 
 require "config.php";
