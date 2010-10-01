@@ -1,0 +1,5 @@
+<?php
+// Rename this file to config.php and add your credentials from
+// https://getdpd.com/user/profile
+define("DPD_CART_USER", "yourusername");
+define("DPD_CART_KEY", "yourapikey");
