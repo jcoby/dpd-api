@@ -38,6 +38,11 @@ class DPDCartApi
     return $response['products'];
   }
   
+  function getProduct($id)
+  {
+    $response = $this->doApiRequest("/product/show", array("id" => $id));
+    return $response['product'];
+  }
   
   function doApiRequest($action, $params, $method='POST')
   {
