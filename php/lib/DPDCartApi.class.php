@@ -39,14 +39,14 @@ class DPDCartApi
   
   function listProducts($storefront_id=null)
   {
-    $response = $this->doApiRequest('/product', array('storefront_id' => $storefront_id), 'GET');
-    return $response['products'];
+    $response = $this->doApiRequest('/products', array('storefront_id' => $storefront_id), 'GET');
+    return $response;
   }
   
   function getProduct($id)
   {
-    $response = $this->doApiRequest("/product/show", array("id" => $id));
-    return $response['product'];
+    $response = $this->doApiRequest("/products/{$id}", array("id" => $id));
+    return $response;
   }
   
   function doApiRequest($action, $params, $method='POST')
