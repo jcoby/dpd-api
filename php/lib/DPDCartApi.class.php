@@ -26,7 +26,7 @@ class DPDCartApi
     return $this->doApiRequest('', array(), 'GET');
   }
   
-  function getWebsites()
+  function listWebsites()
   {
     $response = $this->doApiRequest('/websites', array(), 'GET');
     return $response;
@@ -37,7 +37,7 @@ class DPDCartApi
     return $this->doApiRequest("/websites/{$id}", array(), "GET");
   }
   
-  function getProducts($storefront_id=null)
+  function listProducts($storefront_id=null)
   {
     $response = $this->doApiRequest('/product', array('storefront_id' => $storefront_id), 'GET');
     return $response['products'];
