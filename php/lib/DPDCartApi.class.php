@@ -11,7 +11,7 @@ class DPDCartApi
 {
   var $user = null;
   var $key = null;
-  var $base_url = "getdpd.com/api.php";
+  var $base_url = "getdpd.com/api2.php";
   var $protocol = "https";
   var $success = true;
   
