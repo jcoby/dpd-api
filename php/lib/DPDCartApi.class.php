@@ -49,6 +49,21 @@ class DPDCartApi
     return $response;
   }
   
+  function listPurchases($website_id)
+  {
+    return $this->doApiRequest("websites/{$website_id}/purchases", array(), 'GET');
+  }
+
+  function getPurchase($website_id, $id)
+  {
+    return $this->doApiRequest("websites/{$website_id}/purchases/{$id}", array("id" => $id));
+  }
+  
+  function createPurchase($website_id, $cart)
+  {
+    return $this->doApiRequest("websites/{$website_id}/purchases", $cart, "POST");
+  }
+  
   function doApiRequest($action, $params, $method='POST')
   {
     $this->success = false;
