@@ -14,17 +14,20 @@ require "../lib/DPDCartApi.class.php";
 
 $dpd = new DPDCartApi(DPD_CART_USER, DPD_CART_KEY);
 
-$websites = $dpd->getStorefronts();
+$websites = $dpd->listWebsites();
+$first_product_id = null;
 
 echo "You have ".count($websites)." websites in your account:\n";
 
 foreach($websites as $i => $website)
 {
-  $products = $dpd->getProducts($website["id"]);
-  echo "\t\"{$website['name']}\" has ".count($products)." product(s):\n";
+  $products = $dpd->listProducts($website["id"]);
+  echo "\t\"{$website['id']}: {$website['name']}\" has ".count($products)." product(s):\n";
   
   foreach($products as $product)
   {
+    if($first_product_id == null)
+      $first_product_id = $product['id'];
     echo "\t\t{$product['id']}: {$product['name']}\n";
   }
   
